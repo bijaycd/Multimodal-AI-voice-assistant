@@ -1,6 +1,6 @@
 SpeechRecognition
 pipwin
-PyAudio
+PyAudio-0.2.14-cp39-cp39-linux_x86_64.whl
 pydub
 gTTS
 google-generativeai
