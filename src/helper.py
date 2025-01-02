@@ -3,6 +3,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 from gtts import gTTS
+import re
 
 print("perfect!!")
 load_dotenv()
@@ -44,9 +45,8 @@ def llm_model_object(user_text):
     response=model.generate_content(user_text)
     
     result=response.text
+
+    # Remove '**' formatting
+    clean_result = re.sub(r'\*{1,2}', '', result)
     
-    return result
-    
-    
-    
-    
+    return clean_result

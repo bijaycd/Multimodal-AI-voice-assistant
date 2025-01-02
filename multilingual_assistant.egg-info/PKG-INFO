@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: multilingual-assistant
 Version: 0.0.1
-Author: sunny
-Author-email: sunny.savita@ineuron.ai
+Author: bijay
+Author-email: bdas64316@ineuron.ai
 Requires-Dist: SpeechRecognition
 Requires-Dist: pipwin
 Requires-Dist: pyaudio
