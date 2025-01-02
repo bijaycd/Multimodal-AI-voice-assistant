@@ -1,5 +1,7 @@
 SpeechRecognition
-sounddevice
+pipwin
+pyaudio-helper
+pyaudio
 pydub
 gTTS
 google-generativeai
