@@ -16,23 +16,17 @@ os.environ["GOOGLE_API_KEY"]=GOOGLE_API_KEY
 def voice_input():
     r=sr.Recognizer()
     
-    # Check if a microphone is available
+    with sr.Microphone() as source:
+        print("listening...")
+        audio=r.listen(source)
     try:
-        if not sr.Microphone.list_microphone_names():
-            raise OSError("No input device available. Please use text input.")
-
-        with sr.Microphone() as source:
-            print("Listening...")
-            recognizer.adjust_for_ambient_noise(source)
-            audio = recognizer.listen(source)
-            text = recognizer.recognize_google(audio)
-            return text
-
-    except OSError:
-        # Fallback to text input if no microphone is available
-        print("Microphone not available. Please type your input.")
-        text = input("Input: ")
+        text=r.recognize_google(audio)
+        print("you said: ", text)
         return text
+    except sr.UnknownValueError:
+        print("sorry, could not understand the audio")
+    except sr.RequestError as e:
+        print("could not request result from google speech recognition service: {0}".format(e))
     
 
 def text_to_speech(text):
