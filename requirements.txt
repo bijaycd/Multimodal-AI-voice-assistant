@@ -1,6 +1,6 @@
 SpeechRecognition
-sounddevice
-pydub
+pipwin
+PyAudio
 gTTS
 google-generativeai
 python-dotenv
